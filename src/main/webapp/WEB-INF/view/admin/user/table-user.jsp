@@ -39,37 +39,18 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <th scope="row">1</th>
-                                <td>Mark</td>
-                                <td>Otto</td>
-                                <td>
-                                    <button class="btn btn-success">View</button>
-                                    <button class="btn btn-warning mx-2">Update</button>
-                                    <button class="btn btn-danger">Delete</button>
-                                </td>
-
-                            </tr>
-                            <tr>
-                                <th scope="row">2</th>
-                                <td>Jacob</td>
-                                <td>Thornton</td>
-                                <td>
-                                    <button class="btn btn-success">View</button>
-                                    <button class="btn btn-warning mx-2">Update</button>
-                                    <button class="btn btn-danger">Delete</button>
-                                </td>
-                            </tr>
-                            <tr>
-                                <th scope="row">3</th>
-                                <td>Larry</td>
-                                <td>the Bird</td>
-                                <td>
-                                    <button class="btn btn-success">View</button>
-                                    <button class="btn btn-warning mx-2">Update</button>
-                                    <button class="btn btn-danger">Delete</button>
-                                </td>
-                            </tr>
+                            <c:forEach items="${users}" var="user">
+                                <tr>
+                                    <th scope="row">${user.id}</th>
+                                    <td>${user.email}</td>
+                                    <td>${user.fullName}</td>
+                                    <td>
+                                        <a href="/admin/user/${user.id}"><button class="btn btn-success">View</button></a>
+                                        <a href="/admin/user/${user.id}/update"><button class="btn btn-warning mx-2">Update</button></a>
+                                        <a href="/admin/user/${user.id}/delete"><button class="btn btn-danger">Delete</button></a>
+                                        </td>
+                                </tr>
+                            </c:forEach>
                         </tbody>
                     </table>
                 </div>

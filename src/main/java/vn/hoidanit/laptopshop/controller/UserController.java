@@ -48,7 +48,7 @@ public class UserController {
     public String createUserPage(Model model, @ModelAttribute("newUser") User user) {
         System.out.println("Create user" + user);
         this.userService.handleSaveUser(user);
-        return "hello";
+        return "redirect:/admin/user";
     }
 }
 
