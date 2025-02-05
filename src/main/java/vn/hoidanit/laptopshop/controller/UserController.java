@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import vn.hoidanit.laptopshop.service.UserService;
 import vn.hoidanit.laptopshop.domain.User;
 
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -81,6 +82,20 @@ public class UserController {
 
             this.userService.handleSaveUser(currentUser);
         }
+        return "redirect:/admin/user";
+    }
+
+    @GetMapping("/admin/user/delete/{id}")
+    public String postUpdateUser(Model model, @PathVariable("id") Long id) {
+        model.addAttribute("id", id);
+        User currentUser = this.userService.findUserById(id);
+        model.addAttribute("deleteUser", currentUser);
+        return "admin/user/delete";
+    }
+
+    @PostMapping("/admin/user/delete")
+    public String postDeleteUser(Model model, @ModelAttribute("updateUser") User user) {
+        this.userService.deleteUserById(user.getId());
         return "redirect:/admin/user";
     }
 }

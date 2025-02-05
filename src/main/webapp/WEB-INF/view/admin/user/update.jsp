@@ -33,7 +33,7 @@
 
                                 <div class="mb-3">
                                     <label class="form-label">Email</label>
-                                    <form:input type="email" class="form-control" path="email" name="email" />
+                                    <form:input type="email" class="form-control" path="email" name="email" disable="true" />
                                 </div>
 
                                 <div class="mb-3">
