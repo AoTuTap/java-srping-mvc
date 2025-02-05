@@ -26,9 +26,23 @@ public class UserService {
 
     public User handleSaveUser(User user) {
         return this.userRepository.save(user);
+
     }
 
     public User findUserByEmailNativeQuery(String email) {
         return this.userRepository.findCustomerUser(email);
     }
+
+    public User findUserById(Long id) {
+        return this.userRepository.findById(id).get();
+    }
+
+    public void deleteUserById(Long id) {
+        this.userRepository.deleteById(id);
+    }
+
+    public User updateUser(User user) {
+        return this.userRepository.save(user);
+    }
+
 }
