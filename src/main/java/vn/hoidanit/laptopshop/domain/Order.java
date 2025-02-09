@@ -6,6 +6,7 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 import java.util.List;
 import vn.hoidanit.laptopshop.domain.User;
@@ -23,6 +24,9 @@ public class Order {
     @ManyToOne
     @JoinColumn(name = "user_id")
     User user;
+
+    @OneToMany(mappedBy = "order")
+    List<OrderDetail> orderDetails;
 
     public long getId() {
         return id;
