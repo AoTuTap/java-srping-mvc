@@ -24,11 +24,28 @@
                             <div class="container-fluid px-4">
                                 <h1 class="mt-4">Dashboard</h1>
                                 <ol class="breadcrumb mb-4">
-                                    <li class="breadcrumb-item active">Dashboard</li>
+                                    <li class="breadcrumb-item active">Dashboard/User/View</li>
                                 </ol>
-                                <div>Product</div>
-
-                            </div>
+                                <div class="container-fluid mt-5">
+                                    <div class="row">
+                                        <div class="col-12 mx-auto">
+                                            <h3>User detail with id = ${id}</h3>
+                                            <hr />
+                                            <div class="card" style="width: 60%;">
+                                                <div class="card-header">
+                                                    <h5 class="card-title">User Information</h5>
+                                                </div>
+                                                <ul class="list-group list-group-flush">
+                                                    <li class="list-group-item">Full Name: ${user.fullName}</li>
+                                                    <li class="list-group-item">Email: ${user.email}</li>
+                                                    <li class="list-group-item">Phone: ${user.phone}</li>
+                                                    <li class="list-group-item">Address: ${user.address}</li>
+                                                </ul>
+                                            </div>
+                                            <a href="/admin/user" class="btn btn-success mt-3">Back</a>
+                                        </div>
+                                    </div>
+                                </div>
                         </main>
                         <jsp:include page="../layout/footer.jsp" />
                     </div>
