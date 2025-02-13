@@ -1,4 +1,4 @@
-package vn.hoidanit.laptopshop.controller;
+package vn.hoidanit.laptopshop.controller.admin;
 
 import java.util.List;
 
@@ -14,7 +14,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
 
 @Controller
 public class UserController {
