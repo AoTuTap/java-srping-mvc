@@ -9,6 +9,7 @@ import jakarta.persistence.ManyToOne;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 import java.util.List;
+import vn.hoidanit.laptopshop.domain.User;
 
 @Entity
 @Table(name = "orders")
