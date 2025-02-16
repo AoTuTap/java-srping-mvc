@@ -40,6 +40,7 @@
                                                     <li class="list-group-item">Email: ${user.email}</li>
                                                     <li class="list-group-item">Phone: ${user.phone}</li>
                                                     <li class="list-group-item">Address: ${user.address}</li>
+                                                    <li class="list-group-item"><img src="/images/avatar/${user.avatar}"></img></li>
                                                 </ul>
                                             </div>
                                             <a href="/admin/user" class="btn btn-success mt-3">Back</a>

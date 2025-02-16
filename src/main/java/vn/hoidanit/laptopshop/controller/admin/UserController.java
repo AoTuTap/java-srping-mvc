@@ -14,7 +14,6 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 
-import jakarta.servlet.ServletContext;
 import vn.hoidanit.laptopshop.service.UploadService;
 import vn.hoidanit.laptopshop.service.UserService;
 import vn.hoidanit.laptopshop.domain.User;
@@ -36,15 +35,6 @@ public class UserController {
         this.userService = userService;
         this.uploadService = uploadService;
         this.passwordEncoder = passwordEncoder;
-    }
-
-    @RequestMapping("/")
-    public String getHomePage(Model model) {
-        String test = this.userService.handleHello();
-        User user = this.userService.findUserByEmailNativeQuery("t@gmail.com");
-        System.out.println(user.getFullName());
-        model.addAttribute("eric", test);
-        return "hello";
     }
 
     @RequestMapping("/admin/user/create")
@@ -119,6 +109,7 @@ public class UserController {
         this.userService.deleteUserById(user.getId());
         return "redirect:/admin/user";
     }
+
 }
 
 // @RestController
